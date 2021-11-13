@@ -23,13 +23,13 @@ async def on_ready():
         global UC
         # 現在の時刻
         now = datetime.datetime.now()
-        dt = now + datetime.timedelta(minutes=1,seconds=3)#.strftime('%H:%M')
+        dt = now + datetime.timedelta(minutes=1,seconds=5)#.strftime('%H:%M')
         dt2 = str(dt)[11:]
         target = '.'
         idx = dt2.find(target)
         dt3 = dt2[:idx-3]
 
-        dt_ = now - datetime.timedelta(minutes=1,seconds=30)#.strftime('%H:%M')
+        dt_ = now - datetime.timedelta(seconds=40)#.strftime('%H:%M')
         dt_2 = str(dt_)[11:]
         target = '.'
         idx = dt_2.find(target)
