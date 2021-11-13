@@ -23,7 +23,7 @@ async def on_ready():
         global UC
         # 現在の時刻
         now = datetime.datetime.now()
-        dt = now + datetime.timedelta(minutes=1,seconds=5)#.strftime('%H:%M')
+        dt = now + datetime.timedelta(minutes=1,seconds=4)#.strftime('%H:%M')
         dt2 = str(dt)[11:]
         target = '.'
         idx = dt2.find(target)
