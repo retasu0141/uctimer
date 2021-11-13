@@ -6,7 +6,7 @@ import os
 
 import random,time,asyncio
 import datetime
-bot = commands.Bot(command_prefix="uc_",activity=discord.Game("_help でコマンド確認！"))
+bot = commands.Bot(command_prefix="uc_",activity=discord.Game("uc_help"))
 bot.remove_command('help')
 token = os.environ['DISCORD_BOT_TOKEN']
 matti_data = {}
