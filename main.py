@@ -149,22 +149,19 @@ async def uc_start(dt3):
 
 @bot.event
 async def uc_start_vc(ctx):
-    try:
-        ffmpeg_audio_source = discord.FFmpegPCMAudio("UC.wav")
-        voice_state = ctx.author.voice
-        if (not voice_state) or (not voice_state.channel):
-            await ctx.send("ボイスチャンネルに入っているメンバーがいなかったためキャンセルされました")
-            return
+    ffmpeg_audio_source = discord.FFmpegPCMAudio("UC.wav")
+    voice_state = ctx.author.voice
+    if (not voice_state) or (not voice_state.channel):
+        await ctx.send("ボイスチャンネルに入っているメンバーがいなかったためキャンセルされました")
+        return
 
-        channel = voice_state.channel
-        await channel.connect()
-        print("connected to:",channel.name)
+    channel = voice_state.channel
+    await channel.connect()
+    print("connected to:",channel.name)
 
-        voice_client = ctx.message.guild.voice_client
-        voice_client.play(ffmpeg_audio_source)
-        print("UC")
-    except:
-        pass
+    voice_client = ctx.message.guild.voice_client
+    voice_client.play(ffmpeg_audio_source)
+    print("UC")
 
 
 bot.run(token)
