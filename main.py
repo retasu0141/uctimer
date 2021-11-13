@@ -29,7 +29,7 @@ async def on_ready():
         idx = dt2.find(target)
         dt3 = dt2[:idx-3]
 
-        dt_ = now - datetime.timedelta(seconds=40)#.strftime('%H:%M')
+        dt_ = now - datetime.timedelta(seconds=35)#.strftime('%H:%M')
         dt_2 = str(dt_)[11:]
         target = '.'
         idx = dt_2.find(target)
