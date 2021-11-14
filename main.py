@@ -153,7 +153,7 @@ async def uc_start_vc(ctx):
         ffmpeg_audio_source = discord.FFmpegPCMAudio("UC.wav")
         voice_state = ctx.author.voice
         if (not voice_state) or (not voice_state.channel):
-            await ctx.send("ボイスチャンネルに入っているメンバーがいなかったためキャンセルされました")
+            #await ctx.send("ボイスチャンネルに入っているメンバーがいなかったためキャンセルされました")
             return
 
         channel = voice_state.channel
