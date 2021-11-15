@@ -29,14 +29,13 @@ async def on_ready():
         idx = dt2.find(target)
         dt3 = dt2[:idx-3]
 
-        dt_ = now - datetime.timedelta(seconds=35)#.strftime('%H:%M')
+        dt_ = now - datetime.timedelta(seconds=35)
         dt_2 = str(dt_)[11:]
         target = '.'
         idx = dt_2.find(target)
         dt_3 = dt_2[:idx-3]
 
         print(dt3)
-        #print(dt_3)
         print(UC.keys())
 
 
@@ -46,12 +45,10 @@ async def on_ready():
         if dt_3 in UC:
             print("スタート2")
             await uc_leave(dt_3)
-        #await client.send_message(channel, 'おはよう')
-        await asyncio.sleep(2)
+        await asyncio.sleep(1)
 
 @bot.event
 async def on_message(message):
-    # メッセージの送信者がbotだった場合は無視する
     if message.author.bot:
         return
     await bot.process_commands(message)
@@ -91,7 +88,6 @@ async def leave(ctx):
 async def timer(ctx,time : str):
     """UC"""
     global UC
-    #voice_client = ctx.message.guild.voice_client
     time_list=time.split(':')
     time_h = time_list[0]
     time_m = time_list[1]
